@@ -1,3 +1,9 @@
+require("dotenv").config(); // Permet d'activer les variables d'environnement qui se trouvent dans le fichier `.env`
+// Utilisez le port défini dans le fichier .env
+app.listen(process.env.PORT, () => {
+  console.log("Server started");
+});
+
 const express = require("express");
 const formidable = require("express-formidable");
 const cors = require("cors");
@@ -20,16 +26,18 @@ app.post("/", (req, res) => {
     text: req.fields.message,
   };
 
-  mailgun.messages().send(data, (error, body) => {
-    console.log(body);
-    console.log(error);
+  res.status(200).json("Tripadvisor vous souhaite la bienvenue");
 
-    if (error !== undefined) {
-      res.json({ message: "Données reçues, mail envoyé" });
-    } else {
-      res.json({ error: "An error occurred" });
-    }
-  });
+  //   mailgun.messages().send(data, (error, body) => {
+  //     console.log(body);
+  //     console.log(error);
+
+  //     if (error !== undefined) {
+  //       res.json({ message: "Données reçues, mail envoyé" });
+  //     } else {
+  //       res.json({ error: "An error occurred" });
+  //     }
+  //   });
 });
 
 app.listen(3000, () => {

@@ -16,7 +16,7 @@ app.get("", (req, res) => {
   res.json({ message: "Server started" });
 });
 
-app.post("https://tripadvisor-clone.herokuapp.com/", (req, res) => {
+app.post("https://tripadvisclone.netlify.app/", (req, res) => {
   console.log(req.fields);
 
   const data = {

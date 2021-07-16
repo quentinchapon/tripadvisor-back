@@ -45,8 +45,4 @@ app.listen(process.env.PORT, () => {
   console.log("Server started");
 });
 
-app.listen(3000, () => {
-  console.log("Server started");
-});
-
 // -------

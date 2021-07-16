@@ -1,8 +1,5 @@
 require("dotenv").config(); // Permet d'activer les variables d'environnement qui se trouvent dans le fichier `.env`
 // Utilisez le port défini dans le fichier .env
-app.listen(process.env.PORT, () => {
-  console.log("Server started");
-});
 
 const express = require("express");
 const formidable = require("express-formidable");
@@ -38,6 +35,10 @@ app.post("https://tripadvisclone.netlify.app/", (req, res) => {
   //       res.json({ error: "An error occurred" });
   //     }
   //   });
+});
+
+app.listen(process.env.PORT, () => {
+  console.log("Server started");
 });
 
 app.listen(3000, () => {

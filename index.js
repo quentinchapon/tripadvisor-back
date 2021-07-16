@@ -13,9 +13,9 @@ const API_KEY = API_MAILGUN;
 const DOMAIN = DOMAIN_MAILGUN;
 const mailgun = require("mailgun-js")({ apiKey: API_KEY, domain: DOMAIN });
 
-app.get("/", (req, res) => {
-  res.json({ message: "Server started" });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Server started" });
+// });
 
 app.post("/form", (req, res) => {
   console.log(req.fields);

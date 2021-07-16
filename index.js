@@ -17,7 +17,7 @@ app.get("", (req, res) => {
   res.json({ message: "Server started" });
 });
 
-app.post("https://tripadvisclone.netlify.app/", (req, res) => {
+app.post("/form", (req, res) => {
   console.log(req.fields);
 
   const data = {

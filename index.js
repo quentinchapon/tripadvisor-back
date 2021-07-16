@@ -12,11 +12,11 @@ const app = express();
 app.use(formidable());
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get("", (req, res) => {
   res.json({ message: "Server started" });
 });
 
-app.post("/", (req, res) => {
+app.post("https://tripadvisor-clone.herokuapp.com/", (req, res) => {
   console.log(req.fields);
 
   const data = {

@@ -9,8 +9,8 @@ const app = express();
 app.use(formidable());
 app.use(cors());
 
-const API_KEY = API_MAILGUN;
-const DOMAIN = DOMAIN_MAILGUN;
+const API_KEY = "API_MAILGUN";
+const DOMAIN = "DOMAIN_MAILGUN";
 const mailgun = require("mailgun-js")({ apiKey: API_KEY, domain: DOMAIN });
 
 // app.get("/", (req, res) => {

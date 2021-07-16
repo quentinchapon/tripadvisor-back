@@ -1,17 +1,16 @@
-require("dotenv").config(); // Permet d'activer les variables d'environnement qui se trouvent dans le fichier `.env`
-// Utilisez le port défini dans le fichier .env
-
 const express = require("express");
 const formidable = require("express-formidable");
 const cors = require("cors");
 
-const app = express();
-app.use(formidable());
-app.use(cors());
-
 const API_KEY = "API_MAILGUN";
 const DOMAIN = "DOMAIN_MAILGUN";
 const mailgun = require("mailgun-js")({ apiKey: API_KEY, domain: DOMAIN });
+
+require("dotenv").config();
+
+const app = express();
+app.use(formidable());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.json({ message: "Server started" });

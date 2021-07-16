@@ -22,7 +22,7 @@ app.post("/form", (req, res) => {
 
   const data = {
     from: "Excited User <me@samples.mailgun.org>",
-    to: "votre-mail@gmail.com",
+    to: req.fields.email,
     subject: "Formulaire",
     text: req.fields.message,
   };

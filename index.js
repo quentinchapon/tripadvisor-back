@@ -41,6 +41,10 @@ app.post("/form", (req, res) => {
   });
 });
 
+app.all("*", function (req, res) {
+  console.log("Tribadibadou");
+});
+
 app.listen(process.env.PORT, () => {
   console.log("Server started");
 });

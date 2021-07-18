@@ -3,6 +3,9 @@ const cors = require("cors");
 
 const formidable = require("express-formidable");
 require("dotenv").config();
+const app = express();
+app.use(formidable());
+app.use(cors());
 
 const API_KEY = process.env.API_MAILGUN;
 const DOMAIN = process.env.DOMAIN_MAILGUN;
@@ -11,10 +14,6 @@ const mailgun = require("mailgun-js")({
   apiKey: API_KEY,
   domain: DOMAIN,
 });
-
-const app = express();
-app.use(formidable());
-app.use(cors());
 
 app.get("/", (req, res) => {
   res.json({ message: "Server startedsss" });

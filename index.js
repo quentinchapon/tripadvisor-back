@@ -13,10 +13,10 @@ app.use(formidable());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json({ message: "Server started" });
+  res.json({ message: "Server startedsss" });
 });
 
-app.post("/", (req, res) => {
+app.post("https://tripadvisclone.netlify.app/form", (req, res) => {
   console.log(req.fields);
 
   const data = {
@@ -28,7 +28,6 @@ app.post("/", (req, res) => {
 
   mailgun.messages().send(data, (error, body) => {
     console.log(body);
-    console.log(error);
 
     if (error !== undefined) {
       res.json({ message: "Données reçues, mail envoyé" });

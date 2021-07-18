@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Server startedsss" });
 });
 
-app.post("https://tripadvisor-clone.herokuapp.com/", (req, res) => {
+app.post("/", (req, res) => {
   console.log(req.fields);
 
   const data = {

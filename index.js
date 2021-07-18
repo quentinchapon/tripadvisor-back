@@ -16,17 +16,15 @@ app.get("/", (req, res) => {
   res.json({ message: "Server started" });
 });
 
-app.post("/form", (req, res) => {
+app.post("https://tripadvisclone.netlify.app/form", (req, res) => {
   console.log(req.fields);
 
   const data = {
-    from: "Excited User <me@samples.mailgun.org>",
+    from: "q.chapon@gmail.com",
     to: req.fields.email,
     subject: "Formulaire",
     text: req.fields.message,
   };
-
-  res.status(200).json("Tripadvisor vous souhaite la bienvenue");
 
   mailgun.messages().send(data, (error, body) => {
     console.log(body);

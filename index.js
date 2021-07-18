@@ -1,6 +1,7 @@
 const express = require("express");
-const formidable = require("express-formidable");
 const cors = require("cors");
+
+const formidable = require("express-formidable");
 
 const API_KEY = "API_MAILGUN";
 const DOMAIN = "DOMAIN_MAILGUN";

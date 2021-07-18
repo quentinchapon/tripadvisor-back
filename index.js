@@ -28,7 +28,8 @@ app.post("/", (req, res) => {
   };
 
   mailgun.messages().send(data, (error, body) => {
-    console.log("Envoi du message");
+    console.log(body);
+    console.log(error);
 
     if (error !== undefined) {
       res.json({ message: "Données reçues, mail envoyé" });

@@ -5,7 +5,11 @@ const formidable = require("express-formidable");
 
 const API_KEY = "API_MAILGUN";
 const DOMAIN = "DOMAIN_MAILGUN";
-const mailgun = require("mailgun-js")({ apiKey: API_KEY, domain: DOMAIN });
+const mailgun = require("mailgun-js")({
+  apiKey: API_KEY,
+  domain: DOMAIN,
+  host: "api.eu.mailgun.net",
+});
 
 require("dotenv").config();
 

@@ -1,7 +1,6 @@
 const express = require("express");
 const formidable = require("express-formidable");
 const cors = require("cors");
-const axios = require("axios");
 
 const API_KEY = "API_MAILGUN";
 const DOMAIN = "DOMAIN_MAILGUN";
@@ -17,7 +16,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Server started" });
 });
 
-app.post("https://tripadvisclone.netlify.app/form", (req, res) => {
+app.post("https://tripadvisclone.netlify.app", (req, res) => {
   console.log(req.fields);
 
   const data = {
